@@ -1,0 +1,5 @@
+{
+  services.coturn = {
+    enable = true;
+  };
+}
