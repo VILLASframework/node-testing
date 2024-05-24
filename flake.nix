@@ -91,8 +91,14 @@
         };
       in
       {
-        packages = {
-          default = benchmark.config.driver;
+        packages = rec {
+          default = start-vms;
+
+          start-vms = pkgs.writeShellApplication {
+            name = "start-vms";
+            runtimeInputs = [ benchmark.config.driver ];
+            text = ''nixos-test-driver "$@"'';
+          };
 
           ssh-vms = pkgs.writeShellApplication {
             name = "ssh-vms";
@@ -117,7 +123,13 @@
           };
         };
 
-        devShell = pkgs.mkShell { packages = [ self.packages.${system}.ssh-vms ]; };
+        devShell = pkgs.mkShell {
+          packages = with self.packages.${system}; [
+            ssh-vms
+            start-vms
+            pkgs.reuse
+          ];
+        };
       }
     ));
 }
