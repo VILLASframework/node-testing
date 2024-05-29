@@ -7,20 +7,20 @@ let
   params = {
     modes = [
       "values"
-    #   "rates"
+      "rates"
     ];
 
     protocols = [
-    #   "mqtt"
-    #   "udp"
-      # "websocket"
-      # "websocket_relayed"
-      # "sampled_values"
+      "mqtt"
+      "udp"
+      "websocket"
+      "websocket_relayed"
+      "sampled_values"
       "webrtc"
       "webrtc_tcp"
       "webrtc_relayed_udp"
       "webrtc_relayed_tcp"
-      # "loopback"
+      "loopback"
     ];
 
     rates = [
