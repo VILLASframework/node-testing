@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Steffen Vogel <steffen.vogel@opal-rt.com>, OPAL-RT Germany GmbH
+# SPDX-License-Identifier: Apache-2.0
+
 {
   inputs,
   config,
@@ -5,31 +8,16 @@
   pkgs,
   ...
 }:
-let
-  start = pkgs.writeShellApplication {
-    name = "start";
-    checkPhase = "true";
-    text = ''
-      sudo villas-node /etc/villas-node-$1.json
-    '';
-  };
-in
 {
-  imports = [
-    inputs.villas-node.nixosModules.default
+  imports = [ ../common ];
 
-    ../common
-  ];
-
-  services = {
-    # villas.node = {
-    #   enable = false;
-    #   # config = {};
-    # };
+  boot.kernel.sysctl = {
+    "vm.nr_hugepages" = 512;
   };
 
-  environment.systemPackages = [
-    config.services.villas.node.package
-    start
+  environment.systemPackages = with pkgs; [
+    villas-node
+
+    start-test
   ];
 }

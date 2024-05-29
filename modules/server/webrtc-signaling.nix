@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Steffen Vogel <steffen.vogel@opal-rt.com>, OPAL-RT Germany GmbH
+# SPDX-License-Identifier: Apache-2.0
+
 { pkgs, lib, ... }:
 let
   signalingServer = pkgs.buildGo122Module {

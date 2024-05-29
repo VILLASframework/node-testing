@@ -1,9 +1,14 @@
-{ lib, ... }:
+# SPDX-FileCopyrightText: 2024 Steffen Vogel <steffen.vogel@opal-rt.com>, OPAL-RT Germany GmbH
+# SPDX-License-Identifier: Apache-2.0
+
+{ config, lib, ... }:
 {
   imports = [
-    ./broker.nix
-    ./relay.nix
-    ./signaling.nix
+    ./mqtt-broker.nix
+    ./ngsi-broker.nix
+    ./webrtc-turn-relay.nix
+    ./webrtc-signaling.nix
+    ./websocket-relay.nix
 
     ../common
   ];

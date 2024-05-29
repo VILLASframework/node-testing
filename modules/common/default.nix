@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Steffen Vogel <steffen.vogel@opal-rt.com>, OPAL-RT Germany GmbH
+# SPDX-License-Identifier: Apache-2.0
+
 { pkgs, ... }:
 {
   networking = {
@@ -47,11 +50,14 @@
       jq
       gdb
       tcpdump
+      killall
+      nftables
+      dig
     ];
     enableDebugInfo = true;
   };
 
-  systemd.coredump.enable = true;
+  systemd.coredump.enable = false;
 
   system.stateVersion = "24.05";
 }

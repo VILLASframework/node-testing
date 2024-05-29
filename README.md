@@ -1,10 +1,12 @@
-# VILLASnode WebRTC Testing
+# NixOS-based testing of VILLASnode
 
-This Git repository contains the code used for producing the results of the following paper:
+This Git repository contains a reproducible test-environment for benchmarking the [VILLASnode gateway](https://github.com/VILLASframework/node).
 
-- TODO
+It has been written for creating the benchmark results of the following paper:
 
-The benchmark results presented in the paper have been gathered in a reproducible manner using a declarative description of the test setup using the [Nix](https://nixos.org/) language, package-manager and NixOS operating system.
+- Steffen Vogel, et. al. "WebRTC-based plug-&-play signal transport for peer-to-peer connectivity between Digital Real-time Simulators, IEDs and Operators", submitted to [NEIS 2024](https://neis-conference.com/).
+
+The results presented in the paper have been gathered in a reproducible manner using a declarative description of the test setup using the [Nix](https://nixos.org/) language, package-manager and NixOS operating system.
 This description covers the entire configuration of virtual machines which compose the test setup.
 But it also extends to scripts for executing the tests, post-processing results as well as generating figures..
 
@@ -51,6 +53,10 @@ ssh-vms
 ```
 
 ### Produce figures
+
+```shell
+python plot.py
+```
 
 ## License
 

@@ -80,18 +80,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1716514008,
-        "narHash": "sha256-jIMSBkpVBsSLcH+4h9AGa1tW7fYuWOdedWtrNC57vOA=",
-        "owner": "VILLASframework",
-        "repo": "node",
-        "rev": "4a3ab30940117d812f43aa7d3768d8c3b9e6a727",
-        "type": "github"
+        "lastModified": 1716901263,
+        "narHash": "sha256-3m12tCJAi8SeSCIeSIF9D+U4M8BwjJjEIa9gPEOmjUg=",
+        "path": "/home/stv0g/workspace/villas/node",
+        "type": "path"
       },
       "original": {
-        "owner": "VILLASframework",
-        "ref": "neis-fixes",
-        "repo": "node",
-        "type": "github"
+        "path": "/home/stv0g/workspace/villas/node",
+        "type": "path"
       }
     }
   },
